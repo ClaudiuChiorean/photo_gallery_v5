@@ -1,3 +1,12 @@
+@keyframes color {
+  0%   { background: #33CCCC; }
+  20%  { background: #33CC36; }
+  40%  { background: #B8CC33; }
+  60%  { background: #FCCA00; }
+  80%  { background: #33CC36; }
+  100% { background: #33CCCC; }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,20 +18,26 @@ body {
   color: #6e859c;
   padding: 0;
   margin: 2%;
-  background: #e8e9e9;
+  background: #33CCCC; /* Fallback */
+  animation: color 9s infinite linear;
+  /* background-image:url("/photo_gallery_v5/photos/resources/background.jpg"); */
+  
   text-align: center;
 }
 
 .searchbar {
-  display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px;
-    width: 60%;
-    
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* grid-template-columns: 1fr;
+  grid-template-rows: 1fr; */
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 0 auto;
+  padding: 15px;
+  width: 60%;
+
+
 }
 
 #search {
@@ -30,7 +45,9 @@ body {
   padding: 10px;
   font-size: 0.8em;
   color: #6e859c;
-    
+  width: 800%;
+  min-width: 300px;
+  max-width: 700px;
 }
 
 
@@ -45,21 +62,21 @@ body {
 }
 
 /* @media screen and (max-width: 1269px) {
-  .container {
+  .album {
     grid-template-columns: repeat(3, minmax(13em, 1fr));
     grid-template-rows: 300px 300px;
   }
 }
 
 @media screen and (max-width: 995px) {
-  .container {
+  .album {
     grid-template-columns: repeat(2, minmax(13em, 1fr));
     grid-template-rows: 300px 300px;
   }
 }
 
 @media screen and (max-width: 650px) {
-  .container {
+  .album {
     grid-template-columns: repeat(1, minmax(13em, 1fr));
     grid-template-rows: 300px 300px;
   }
